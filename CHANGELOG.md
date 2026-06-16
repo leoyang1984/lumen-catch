@@ -2,6 +2,10 @@
 
 本项目版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## 0.1.2 — 2026-06-16
+
+- 默认 AI 提供方改为 DeepSeek、默认模型改为 `deepseek-v4-flash`（又快又便宜；旧的 `deepseek-chat`/`deepseek-reasoner` id 将于 2026-07-24 弃用）。仅影响全新安装，已配置的实例不受影响。
+
 ## 0.1.1 — 2026-06-16
 
 移动端体验修复。
