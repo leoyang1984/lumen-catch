@@ -2,6 +2,10 @@
 
 本项目版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## 0.1.3 — 2026-06-16
+
+- 新增 URL / 快捷指令入口：`obsidian://lumen-catch?text=...` 直接把文字灌进捕获管线（原文落地 + AI 后台整理），连 Modal 都不弹；不带 `text` 则等同打开 ⚡智能记录 的 Modal。配 iOS「快捷指令」可实现「敲两下手机背面 → 说一句话 → 入库」，无需手动找 App 打字。仍是「捕获」这唯一动作的另一个触发口，不引入任何新 UI。
+
 ## 0.1.2 — 2026-06-16
 
 - 默认 AI 提供方改为 DeepSeek、默认模型改为 `deepseek-v4-flash`（又快又便宜；旧的 `deepseek-chat`/`deepseek-reasoner` id 将于 2026-07-24 弃用）。仅影响全新安装，已配置的实例不受影响。
