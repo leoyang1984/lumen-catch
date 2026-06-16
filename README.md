@@ -40,8 +40,21 @@ Catch 写入的 frontmatter 带 `type: lumen-note` + `status: unprocessed`，与
 
 ```bash
 npm install
-npm run dev     # 监听构建，输出到 test-vault/.obsidian/plugins/lumen-catch
+npm run dev     # 监听构建，热输出到 esbuild.config.mjs 里配置的测试 vault 插件目录
 npm run build   # 生产构建 + 类型检查
 ```
 
 技术约束：运行时为 Capacitor（**无 Node**），禁用一切 Node 内置模块；网络请求一律走 Obsidian 的 `requestUrl`（绕过移动端 CORS），不用 `fetch`。
+
+### 发版
+
+源码在私有仓库 `lumen-catch-dev`，分发产物在公开仓库 `lumen-catch`（同级目录 `../lumen-catch-release`）。一键发版：
+
+```bash
+# 1. 在 manifest.json 里把 version 改成新版本号（单一事实源）
+# 2. 在 CHANGELOG.md 顶部加一段 "## <版本> — <日期>" 的说明
+# 3. 跑脚本：构建 → 同步三件套到发布仓库 → 提交推送 → 建 GitHub Release
+./release.sh
+```
+
+发布仓库目录默认取 `../lumen-catch-release`，挪了位置就用 `RELEASE_REPO=/path ./release.sh` 覆盖。脚本带保护：版本号已存在或找不到发布仓库会直接报错退出。
