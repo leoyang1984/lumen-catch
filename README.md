@@ -2,9 +2,7 @@
 
 > Catch a thought the moment it sparks — straight into your vault.
 
-一个**极小的 Obsidian 移动端捕获器**。唯一职责：在念头闪现的那一秒，把它又快又稳地接住、送进 vault 的 inbox，然后立刻消失。
-
-它**不是**桌面 Lumen 的移动版，而是与桌面共享同一个 vault、代码完全独立的捕获器。它只 catch。
+一个**极小的 Obsidian 移动端捕获器**。唯一职责：在念头闪现的那一秒，把它又快又稳地接住、送进 vault 的 inbox，然后立刻消失。它只 catch。
 
 ## 它怎么工作（捕获与加工解耦）
 
@@ -17,9 +15,9 @@
 
 ## 安装与使用
 
-1. 用 [BRAT](https://github.com/TfTHacker/obsidian42-brat) 安装本插件（移动端可装，`isDesktopOnly: false`）。
+1. 用 [BRAT](https://github.com/TfTHacker/obsidian42-brat) 安装：添加 `leoyang1984/lumen-catch` 即可（移动端可装，`isDesktopOnly: false`，最低 Obsidian 1.4.0）。
 2. **把命令钉到移动端工具栏**（主推入口）：Obsidian 设置 → 移动端专用 → Manage toolbar options → 添加 **⚡ 智能记录**。它位置固定、可形成肌肉记忆，比在命令菜单里翻找快得多。
-3. 点工具栏图标 → Modal 弹出、键盘已弹、光标在闪 → 打字 → 点「智能记录」（或 `Cmd/Ctrl + Enter`）→ 完成。
+3. 点工具栏图标 → Modal 弹出、键盘已弹、光标在闪 → 打字 → 点「智能记录」→ 完成。
 
 ## 设置
 
@@ -36,25 +34,6 @@
 
 Catch 写入的 frontmatter 带 `type: lumen-note` + `status: unprocessed`，与桌面 Lumen 同一套 vault 语法。手机上接住的念头，桌面侧的落位流程可凭此直接认领归位。
 
-## 开发
+## 许可证
 
-```bash
-npm install
-npm run dev     # 监听构建，热输出到 esbuild.config.mjs 里配置的测试 vault 插件目录
-npm run build   # 生产构建 + 类型检查
-```
-
-技术约束：运行时为 Capacitor（**无 Node**），禁用一切 Node 内置模块；网络请求一律走 Obsidian 的 `requestUrl`（绕过移动端 CORS），不用 `fetch`。
-
-### 发版
-
-源码在私有仓库 `lumen-catch-dev`，分发产物在公开仓库 `lumen-catch`（同级目录 `../lumen-catch-release`）。一键发版：
-
-```bash
-# 1. 在 manifest.json 里把 version 改成新版本号（单一事实源）
-# 2. 在 CHANGELOG.md 顶部加一段 "## <版本> — <日期>" 的说明
-# 3. 跑脚本：构建 → 同步三件套到发布仓库 → 提交推送 → 建 GitHub Release
-./release.sh
-```
-
-发布仓库目录默认取 `../lumen-catch-release`，挪了位置就用 `RELEASE_REPO=/path ./release.sh` 覆盖。脚本带保护：版本号已存在或找不到发布仓库会直接报错退出。
+[MIT](LICENSE)
