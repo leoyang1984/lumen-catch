@@ -1,0 +1,10 @@
+{
+  "id": "lumen-catch",
+  "name": "Lumen Catch",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Catch a thought the moment it sparks — straight into your vault.",
+  "author": "Leo Yang",
+  "authorUrl": "https://github.com/leoyang1984",
+  "isDesktopOnly": false
+}

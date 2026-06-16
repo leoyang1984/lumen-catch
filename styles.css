@@ -1,0 +1,26 @@
+/* Lumen Catch — 捕获 Modal 极简样式。只为「输入框够大、聚焦清晰」，不做多余装饰。 */
+
+.lumen-catch-modal .lumen-catch-input {
+    width: 100%;
+    min-height: 7.5em;
+    resize: vertical;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.75em;
+    border-radius: var(--radius-m);
+    background: var(--background-modifier-form-field);
+    border: 1px solid var(--background-modifier-border);
+    color: var(--text-normal);
+    box-sizing: border-box;
+}
+
+.lumen-catch-modal .lumen-catch-input:focus {
+    border-color: var(--interactive-accent);
+    outline: none;
+}
+
+.lumen-catch-modal .setting-item {
+    border-top: none;
+    padding-top: 0.75em;
+    justify-content: flex-end;
+}
